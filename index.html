@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clue Unlocker</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input {
+      padding: 10px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Password to Reveal a Clue</h2>
+
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="checkPassword()">Unlock</button>
+
+  <div id="result"></div>
+
+  <script>
+    const clues = {
+      "alpha1": "Clue 1: Look under the table.",
+      "beta2": "Clue 2: Check behind the door.",
+      "gamma3": "Clue 3: It's near something cold.",
+      "delta4": "Clue 4: Look where shoes sleep.",
+      "epsilon5": "Clue 5: Try the highest shelf.",
+      "zeta6": "Clue 6: Something is taped underneath.",
+      "eta7": "Clue 7: Search near the window.",
+      "theta8": "Clue 8: Check your bag.",
+      "iota9": "Clue 9: Behind the mirror.",
+      "kappa10": "Clue 10: Final clue is in your pocket."
+    };
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const resultDiv = document.getElementById("result");
+
+      if (clues[input]) {
+        resultDiv.innerHTML = clues[input];
+      } else {
+        resultDiv.innerHTML = "❌ Wrong password!";
+        resultDiv.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
