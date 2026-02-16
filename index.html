@@ -11,6 +11,7 @@
     input {
       padding: 10px;
       width: 200px;
+      margin-right: 10px;
     }
     button {
       padding: 10px 15px;
@@ -21,6 +22,13 @@
       font-size: 18px;
       font-weight: bold;
       color: green;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-top: 20px;
+      border: 2px solid #333;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -35,31 +43,30 @@
 
   <script>
     const clues = {
-      "alpha1": "Clue 1:PS 1.jpg",
-      "beta2": "Clue 2: Check behind the door.",
-      "gamma3": "Clue 3: It's near something cold.",
-      "delta4": "Clue 4: Look where shoes sleep.",
-      "epsilon5": "Clue 5: Try the highest shelf.",
-      "zeta6": "Clue 6: Something is taped underneath.",
-      "eta7": "Clue 7: Search near the window.",
-      "theta8": "Clue 8: Check your bag.",
-      "iota9": "Clue 9: Behind the mirror.",
-      "kappa10": "Clue 10: Final clue is in your pocket."
+      "alpha1": "PS_1.jpg",
+      "beta2": "PS_2.jpg",
+      "gamma3": "PS_3.jpg",
+      "delta4": "PS_4.jpg",
+      "epsilon5": "PS_5.jpg",
+      "zeta6": "PS_6.jpg",
+      "eta7": "PS_7.jpg",
+      "theta8": "PS_8.jpg",
+      "iota9": "PS_9.jpg",
+      "kappa10": "PS_10.jpg"
     };
 
     function checkPassword() {
-  const input = document.getElementById("password").value;
-  const resultDiv = document.getElementById("result");
+      const input = document.getElementById("password").value.trim();
+      const resultDiv = document.getElementById("result");
 
-  if (clues[input]) {
-    resultDiv.innerHTML = `<img src="${clues[input]}" width="300">`;
-    resultDiv.style.color = "green";
-  } else {
-    resultDiv.innerHTML = "❌ Wrong password!";
-    resultDiv.style.color = "red";
-  }
-}
-
+      if (clues[input]) {
+        resultDiv.innerHTML = `<img src="${clues[input]}" alt="Clue">`;
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.innerHTML = "❌ Wrong password!";
+        resultDiv.style.color = "red";
+      }
+    }
   </script>
 
 </body>
