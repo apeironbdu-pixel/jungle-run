@@ -48,16 +48,18 @@
     };
 
     function checkPassword() {
-      const input = document.getElementById("password").value;
-      const resultDiv = document.getElementById("result");
+  const input = document.getElementById("password").value;
+  const resultDiv = document.getElementById("result");
 
-      if (clues[input]) {
-        resultDiv.innerHTML = clues[input];
-      } else {
-        resultDiv.innerHTML = "❌ Wrong password!";
-        resultDiv.style.color = "red";
-      }
-    }
+  if (clues[input]) {
+    resultDiv.innerHTML = `<img src="${clues[input]}" width="300">`;
+    resultDiv.style.color = "green";
+  } else {
+    resultDiv.innerHTML = "❌ Wrong password!";
+    resultDiv.style.color = "red";
+  }
+}
+
   </script>
 
 </body>
